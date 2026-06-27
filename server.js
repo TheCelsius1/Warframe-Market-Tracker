@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
     // Enable CORS for localhost
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Language, Platform');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Language, Platform, x-platform');
 
     if (req.method === 'OPTIONS') {
         res.writeHead(204);

@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = 'https://warframe-market-tracker.onrender.com/api';
 const ASSETS_BASE = 'https://warframe.market/static/assets';
 
 // DOM Elements
