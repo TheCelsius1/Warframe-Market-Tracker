@@ -1,0 +1,10 @@
+{
+  "name": "warframe-market-proxy",
+  "version": "1.0.0",
+  "description": "Proxy for Warframe Market API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

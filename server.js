@@ -3,7 +3,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const API_HOST = 'api.warframe.market';
 
 const MIME_TYPES = {
