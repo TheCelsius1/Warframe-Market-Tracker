@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warframe Market Tracker</title>
+    <meta name="description" content="Catálogo de precios de armas de Warframe Market.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="logo">
+                <span class="logo-accent">Warframe</span> Market Tracker
+            </h1>
+            
+            <div class="progress-container" id="progress-container" style="display: none;">
+                <div class="progress-info">
+                    <span id="progress-text">Cargando precios... 0/0</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="btn-refresh-prices" title="Forzar actualización de precios">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Actualizar Precios
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls-panel glass-panel">
+            <div class="control-group search-group">
+                <input type="text" id="search-input" placeholder="Buscar arma..." class="input-field" autocomplete="off">
+            </div>
+            
+            <div class="control-group sort-group">
+                <label for="sort-select">Ordenar por:</label>
+                <select id="sort-select" class="input-field">
+                    <option value="name-asc">Nombre (A-Z)</option>
+                    <option value="price-asc">Precio (Menor a Mayor)</option>
+                    <option value="price-desc">Precio (Mayor a Menor)</option>
+                </select>
+            </div>
+            <details class="filters-details">
+                <summary class="btn btn-outline">Filtros ▾</summary>
+                <div class="filters-dropdown-content">
+                    <div class="control-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="filter-weapons-checkbox" checked>
+                            <span class="custom-checkbox"></span>
+                            Armas
+                        </label>
+                    </div>
+                    <div class="control-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="filter-warframes-checkbox">
+                            <span class="custom-checkbox"></span>
+                            Warframes
+                        </label>
+                    </div>
+                    <div class="control-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="hide-owned-checkbox">
+                            <span class="custom-checkbox"></span>
+                            En posesión (Ocultar)
+                        </label>
+                    </div>
+                    <div class="control-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="crossplay-checkbox">
+                            <span class="custom-checkbox"></span>
+                            Cross-Save (Global)
+                        </label>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="weapons-grid" id="weapons-grid">
+            <!-- Loading placeholder -->
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Cargando catálogo de armas...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
